@@ -8,7 +8,7 @@
 <a href="./README.md">English</a> | <a href="./README_ja.md">日本語</a> | 繁體中文
 </sub></div>
 
-✨ **將 Claude Code / Cursor IDE / Gemini CLI / Codex CLI / GitHub Copilot / Qwen Code / Windsurf 直接帶入 Spec-Driven / AI-DLC 的生產級流程，需求・設計・任務・指導文件一次對齊團隊審核。**
+✨ **將 Claude Code / Cursor IDE / Gemini CLI / Codex CLI / GitHub Copilot / Qwen Code / Windsurf / Google Antigravity 直接帶入 Spec-Driven / AI-DLC 的生產級流程，需求・設計・任務・指導文件一次對齊團隊審核。**
 
 👻 **Kiro 相容** — 與 Kiro IDE 相似的 Spec-Driven / AI-DLC 風格，可沿用既有 Kiro 規格並保持互通。
 
@@ -17,7 +17,7 @@
 - ✅ **分離研究** — 將探索筆記（Research.md）與最終設計（Design.md）分開管理
 - ✅ **品質關卡** — validate-gap/design/impl 指令在編碼前捕捉整合問題
 - ✅ **一次自訂** — 將模板適應至團隊流程；所有代理遵循相同工作流程
-- ✅ **統一工作流程** — 7 代理 × 12 語言共享相同的 11 指令流程
+- ✅ **統一工作流程** — 8 代理 × 12 語言共享相同的 11 指令流程
 
 > 只想看安裝？跳到 [安裝](#-安裝)。若要維持 1.1.5，使用 `npx cc-sdd@1.1.5 --claude-code ...`；升級 v2.0.0 請參考 [Migration Guide](../../docs/guides/migration-guide.md) ｜ [日文版](../../docs/guides/ja/migration-guide.md)。
 
@@ -44,6 +44,7 @@ npx cc-sdd@latest --codex --lang zh-TW            # Codex CLI
 npx cc-sdd@latest --copilot --lang zh-TW          # GitHub Copilot
 npx cc-sdd@latest --qwen --lang zh-TW             # Qwen Code
 npx cc-sdd@latest --windsurf --lang zh-TW         # Windsurf IDE
+npx cc-sdd@latest --antigravity --lang zh-TW     # Google Antigravity
 
 # 注意：@next 現已保留給未來的 alpha/beta 版本
 ```
@@ -126,6 +127,7 @@ npx cc-sdd@latest --windsurf --lang zh-TW         # Windsurf IDE
 | **GitHub Copilot** | ✅ 完全支援 | 11 個提示 | `AGENTS.md` |
 | **Qwen Code** | ✅ 完全支援 | 11 個指令 | `QWEN.md` |
 | **Windsurf IDE** | ✅ 完全支援 | 11 個工作流程 | `AGENTS.md` |
+| **Google Antigravity** | ✅ 完全支援 | 11 個工作流程 | `AGENTS.md` |
 | 其他（Factory AI Droid） | 📅 規劃中 | - |
 
 ## 📋 指令
@@ -201,6 +203,7 @@ project/
 ├── .codex/prompts/           # 11 個提示指令（Codex CLI）
 ├── .github/prompts/          # 11 個提示指令（GitHub Copilot）
 ├── .windsurf/workflows/      # 11 個工作流程檔案（Windsurf IDE）
+├── .agent/workflows/         # 11 個工作流程檔案（Google Antigravity）
 ├── .kiro/settings/           # 共用規則與模板（以 {{KIRO_DIR}} 展開）
 ├── .kiro/specs/             # 功能規格文件
 ├── .kiro/steering/          # AI 指導規則
