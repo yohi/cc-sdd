@@ -8,7 +8,7 @@
 English | <a href="./README_ja.md">日本語</a> | <a href="./README_zh-TW.md">繁體中文</a>
 </sub></div>
 
-✨ **Transform Claude Code / Cursor IDE / Gemini CLI / Codex CLI / GitHub Copilot / Qwen Code / Windsurf from prototype to production-ready development.**
+✨ **Transform Claude Code / Cursor IDE / Gemini CLI / Codex CLI / GitHub Copilot / Qwen Code / Windsurf / Google Antigravity from prototype to production-ready development.**
 
 👻 **Kiro-inspired** — Similar Spec-Driven, AI-DLC style as Kiro IDE, so existing Kiro specs remain compatible and portable.
 
@@ -17,7 +17,7 @@ English | <a href="./README_ja.md">日本語</a> | <a href="./README_zh-TW.md">�
 - ✅ **Separate Research** — Keep discovery notes (Research.md) separate from final design (Design.md)
 - ✅ **Quality Gates** — validate-gap/design/impl commands catch integration issues before coding
 - ✅ **Customize Once** — Adapt templates to your team's process; all agents follow the same workflow
-- ✅ **Universal Workflow** — 7 agents × 12 languages share the same 11-command process
+- ✅ **Universal Workflow** — 8 agents × 12 languages share the same 11-command process
 
 ---
 
@@ -47,6 +47,7 @@ npx cc-sdd@latest --codex --lang fr         # Codex CLI
 npx cc-sdd@latest --copilot --lang pt       # GitHub Copilot
 npx cc-sdd@latest --qwen --lang de          # Qwen Code
 npx cc-sdd@latest --windsurf --lang ja      # Windsurf IDE
+npx cc-sdd@latest --antigravity --lang ja   # Google Antigravity
 
 # Note: @next is now reserved for future alpha/beta versions
 ```
@@ -129,6 +130,7 @@ npx cc-sdd@latest --windsurf --lang ja      # Windsurf IDE
 | **GitHub Copilot** | ✅ Full | 11 prompts |
 | **Qwen Code** | ✅ Full | 11 commands |
 | **Windsurf IDE** | ✅ Full | 11 workflows |
+| **Google Antigravity** | ✅ Full | 11 workflows |
 | Others (Factory AI Droid) | 📅 Planned | - |
  
 ## 📋 Commands
@@ -206,6 +208,7 @@ project/
 ├── .codex/prompts/           # 11 prompt commands (Codex CLI)
 ├── .github/prompts/          # 11 prompt commands (GitHub Copilot)
 ├── .windsurf/workflows/      # 11 workflow files (Windsurf IDE)
+├── .agent/workflows/         # 11 workflow files (Google Antigravity)
 ├── .kiro/settings/           # Shared rules & templates (variables resolved with {{KIRO_DIR}})
 ├── .kiro/specs/              # Feature specifications
 ├── .kiro/steering/           # AI guidance rules

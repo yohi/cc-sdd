@@ -1,0 +1,39 @@
+{
+    "version": 1,
+    "artifacts": [
+        {
+            "id": "commands",
+            "source": {
+                "type": "templateDir",
+                "fromDir": "templates/agents/windsurf/commands",
+                "toDir": "{{AGENT_COMMANDS_DIR}}"
+            },
+            "when": {
+                "agent": "antigravity"
+            }
+        },
+        {
+            "id": "doc_main",
+            "source": {
+                "type": "templateFile",
+                "from": "templates/agents/windsurf/docs/AGENTS.md",
+                "toDir": ".",
+                "rename": "{{AGENT_DOC}}"
+            },
+            "when": {
+                "agent": "antigravity"
+            }
+        },
+        {
+            "id": "settings_common",
+            "source": {
+                "type": "templateDir",
+                "fromDir": "templates/shared/settings",
+                "toDir": "{{KIRO_DIR}}/settings"
+            },
+            "when": {
+                "agent": "antigravity"
+            }
+        }
+    ]
+}
