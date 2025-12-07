@@ -1,0 +1,16 @@
+{
+    "version": 1,
+    "artifacts": [
+        {
+            "id": "commands",
+            "source": {
+                "type": "templateDir",
+                "fromDir": "templates/agents/gemini-cli/commands",
+                "toDir": "{{AGENT_COMMANDS_DIR}}"
+            },
+            "when": {
+                "agent": "qwen-code"
+            }
+        }
+    ]
+}

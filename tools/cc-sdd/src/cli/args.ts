@@ -15,6 +15,7 @@ export type ParsedArgs = {
   kiroDir?: string;
   manifest?: string;
   profile?: 'full' | 'minimal';
+  global?: boolean;
 };
 
 const agentAliasMap = new Map<string, AgentType>();
@@ -36,6 +37,7 @@ const booleanFlags = new Set([
   'y',
   'dry-run',
   'backup',
+  'global',
   ...agentAliasMap.keys(),
 ]);
 const valueFlags = new Set(['agent', 'lang', 'os', 'overwrite', 'kiro-dir', 'backup', 'manifest', 'profile']);
@@ -105,6 +107,9 @@ export const parseArgs = (argv: string[]): ParsedArgs => {
       switch (name) {
         case 'dry-run':
           out.dryRun = true;
+          break;
+        case 'global':
+          out.global = true;
           break;
         case 'backup': {
           if (value === true) out.backup = true;

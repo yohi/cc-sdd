@@ -1,5 +1,6 @@
 export interface AgentLayoutDefaults {
   commandsDir: string;
+  globalCommandsDir?: string;
   agentDir: string;
   docFile: string;
 }
@@ -44,6 +45,7 @@ export const agentDefinitions = {
     recommendedModels: ['Claude 4.5 Sonnet or newer'],
     layout: {
       commandsDir: '.claude/commands/kiro',
+      globalCommandsDir: '~/.claude/commands',
       agentDir: '.claude',
       docFile: 'CLAUDE.md',
     },
@@ -65,6 +67,7 @@ export const agentDefinitions = {
     recommendedModels: ['Claude 4.5 Sonnet or newer'],
     layout: {
       commandsDir: '.claude/commands/kiro',
+      globalCommandsDir: '~/.claude/commands',
       agentDir: '.claude',
       docFile: 'CLAUDE.md',
     },
@@ -86,6 +89,7 @@ export const agentDefinitions = {
     recommendedModels: ['gpt-5.1-codex medium/high', 'gpt-5.1 medium/high'],
     layout: {
       commandsDir: '.codex/prompts',
+      globalCommandsDir: '~/.codex/prompts',
       agentDir: '.codex',
       docFile: 'AGENTS.md',
     },
@@ -111,6 +115,7 @@ export const agentDefinitions = {
     ],
     layout: {
       commandsDir: '.cursor/commands/kiro',
+      globalCommandsDir: '~/.cursor/commands',
       agentDir: '.cursor',
       docFile: 'AGENTS.md',
     },
@@ -151,6 +156,7 @@ export const agentDefinitions = {
     recommendedModels: ['Gemini 2.5 Pro or newer'],
     layout: {
       commandsDir: '.gemini/commands/kiro',
+      globalCommandsDir: '~/.gemini/commands',
       agentDir: '.gemini',
       docFile: 'GEMINI.md',
     },
@@ -186,6 +192,7 @@ export const agentDefinitions = {
     aliasFlags: ['--antigravity', '--ag'],
     layout: {
       commandsDir: '.agent/workflows',
+      globalCommandsDir: '~/.gemini/antigravity/global_workflows',
       agentDir: '.agent',
       docFile: 'AGENTS.md',
     },
@@ -203,6 +210,7 @@ export const agentDefinitions = {
     aliasFlags: ['--qwen-code', '--qwen'],
     layout: {
       commandsDir: '.qwen/commands/kiro',
+      globalCommandsDir: '~/.qwen/commands',
       agentDir: '.qwen',
       docFile: 'QWEN.md',
     },
