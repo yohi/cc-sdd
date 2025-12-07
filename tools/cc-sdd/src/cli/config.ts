@@ -30,6 +30,7 @@ export type ResolvedConfig = {
   effectiveOverwrite: OverwritePolicy;
   dryRun: boolean;
   yes: boolean;
+  global: boolean;
   backupEnabled: boolean;
   backupDir: string;
   layout: AgentLayout;
@@ -63,6 +64,7 @@ export const mergeConfigAndArgs = (
   const effectiveOverwrite: OverwritePolicy = yes && overwrite === 'prompt' ? 'force' : overwrite;
 
   const dryRun = !!args.dryRun;
+  const global = !!args.global;
 
   let backupEnabled = false;
   let backupDir = config.backupDir ?? defaults.backupDir;
@@ -73,7 +75,7 @@ export const mergeConfigAndArgs = (
     }
   }
 
-  const layout = resolveAgentLayout(agent, { agentLayouts: config.agentLayouts });
+  const layout = resolveAgentLayout(agent, { agentLayouts: config.agentLayouts, global });
 
   return {
     agent,
@@ -85,6 +87,7 @@ export const mergeConfigAndArgs = (
     effectiveOverwrite,
     dryRun,
     yes,
+    global,
     backupEnabled,
     backupDir,
     layout,

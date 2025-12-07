@@ -196,6 +196,10 @@ npx cc-sdd@latest --dry-run --backup
 
 # Custom directory
 npx cc-sdd@latest --kiro-dir docs
+
+# Global Installation
+npx cc-sdd@latest --global --antigravity  # Install workflows to ~/.gemini/antigravity/global_workflows
+npx cc-sdd@latest --global --cursor       # Install commands to ~/.cursor/commands
 ```
 
 ## 📁 Project Structure

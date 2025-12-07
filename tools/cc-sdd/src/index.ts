@@ -28,8 +28,9 @@ const helpText = `Usage: cc-sdd [options]
 
 Options:
   --agent <${agentKeys.join('|')}>  Select agent
-${agentAliasLine}  --lang <ja|en|zh-TW|zh|es|pt|de|fr|ru|it|ko|ar>  Language
+  --lang <ja|en|zh-TW|zh|es|pt|de|fr|ru|it|ko|ar>  Language
   --os <auto|mac|windows|linux>               Target OS (auto uses runtime)
+  --global                                    Install globally (e.g. ~/.cursor/commands)
   --kiro-dir <path>                           Kiro root dir (default .kiro)
   --overwrite <prompt|skip|force>             Overwrite policy (default: prompt)
                                               prompt: ask for each file
@@ -50,9 +51,16 @@ const resolveManifestPath = async (
   argsProfile: 'full' | 'minimal' | undefined,
   manifestArg: string | undefined,
   templatesBase: string,
+  isGlobal?: boolean,
 ): Promise<string> => {
   if (manifestArg) return manifestArg;
+
   const baseDir = path.join(templatesBase, 'manifests');
+
+  if (isGlobal) {
+    return path.join(baseDir, `${resolvedAgent}-global.json`);
+  }
+
   const defaultPath = path.join(baseDir, `${resolvedAgent}.json`);
   if (argsProfile === 'minimal') {
     const minimal = path.join(baseDir, `${resolvedAgent}-min.json`);
@@ -215,7 +223,13 @@ export const runCli = async (
   const resolved = mergeConfigAndArgs(parsedArgs, loadedConfig, runtime);
 
   const templatesBase = execOpts?.templatesRoot ? path.join(execOpts.templatesRoot, 'templates') : 'templates';
-  const manifestPath = await resolveManifestPath(resolved.agent, parsedArgs.profile, parsedArgs.manifest, templatesBase);
+  const manifestPath = await resolveManifestPath(
+    resolved.agent,
+    parsedArgs.profile,
+    parsedArgs.manifest,
+    templatesBase,
+    resolved.global,
+  );
 
   if (parsedArgs.dryRun) {
     return handleDryRun(manifestPath, resolved, io, execOpts);
